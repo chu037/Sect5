@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_DataSet2" value="name:admin_id;datatype:3,name:admin_username;datatype:202,name:admin_password;datatype:202,name:s01name;datatype:202,name:admin_yes;datatype:11,name:admin_phone;datatype:202,name:admin_cell;datatype:202,name:admin_mail;datatype:202" />
+</info>

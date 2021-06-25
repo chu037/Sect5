@@ -1,0 +1,163 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=big5">
+	<TITLE>chief</TITLE>
+	<BASE TARGET="main">
+	<META NAME="GENERATOR" CONTENT="Microsoft FrontPage 4.0">
+	<META NAME="CREATED" CONTENT="20040217;13341759">
+	<META NAME="CHANGED" CONTENT="20040217;14181237">
+	<META NAME="ProgId" CONTENT="FrontPage.Editor.Document">
+	<SCRIPT LANGUAGE="JavaScript">
+                
+var vn="Microsoft Internet Explorer";                
+var some;                
+if(navigator.appName!=vn)                
+some=1900;                
+else                
+some=0;                
+function montharr(m0, m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11)                
+{                
+this[0] = m0;                
+this[1] = m1;                
+this[2] = m2;                
+this[3] = m3;                
+this[4] = m4;                
+this[5] = m5;                
+this[6] = m6;                
+this[7] = m7;                
+this[8] = m8;                
+this[9] = m9;                
+this[10] = m10;                
+this[11] = m11;                
+}                
+
+function calendar()                
+{                
+                
+var today = new Date();
+var now = new Date()                
+var monthDays = new montharr(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
+year = today.getYear();
+month = today.getMonth();                
+thisDay = today.getDate();
+if (((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0)) monthDays[1] = 29;                
+nDays = monthDays[today.getMonth()];                
+firstDay = today;                
+firstDay.setDate(1); // works fine for most systems                
+testMe = firstDay.getDate();                
+if (testMe == 2) firstDay.setDate(0);                
+startDay = firstDay.getDay();
+var montharray=new Array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec")  
+var todayy=today.getYear() 
+if (todayy < 1000) 
+todayy+=1900 
+var todaym=now.getMonth() 
+var todayd=now.getDate() 
+var todaystring=montharray[todaym]+" "+todayd+", "+todayy 
+var paststring=montharray[3]+" "+7+", "+2008 
+var weekrun=(Math.floor((Date.parse(todaystring)-Date.parse(paststring))/(24*60*60*1000*7)) % 7)
+var difference=(Math.floor(((Date.parse(todaystring)-Date.parse(paststring))/(24*60*60*1000))+weekrun) % 7)
+var dueNames = new Array("蔡振華 分機119","林天成 分機115","郭進寶 分機117","張炳松 分機115","段濬豪 分機118","張明山 分機117","廖漢璋 分機119"); 
+var dayNames = new Array("星期日","星期一","星期二","星期三","星期四","星期五","星期六");                
+var monthNames = new Array("1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月");                
+var now = new Date();                
+                
+document.write('<table border="0" cellspacing="0" cellpadding="0" align="left"><TR><TD><table width="100%" border="0" cellspacing="1" cellpadding="1" bgcolor="Silver">');                
+document.write('<TR><th colspan="7" bgcolor="#FFE4B5">');                
+document.write("<font style=font-size:9pt;Color:#330099>" , "今天是民國" , " " , now.getYear() + some -1911 , "年" , " " , monthNames[now.getMonth()] , " " , now.getDate() , "日" , " " , dayNames[now.getDay()], "</FONT>");                
+document.write('<TR><th colspan="7" bgcolor="#7FFFD4">');
+document.writeln('</TH></TR><TR><TH BGCOLOR="#FF1493"><font style="font-size:9pt;Color:White">日</FONT></TH>');                
+document.writeln('<th bgcolor="#0080FF"><font style="font-size:9pt;Color:White">一</FONT></TH>');                
+document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">二</FONT></TH>');                
+document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">三</FONT></TH>');                
+document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">四</FONT></TH>');                
+document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">五</FONT></TH>');                
+document.writeln('<TH BGCOLOR="#FFc0cb"><font style="font-size:9pt;Color:White">六</FONT></TH>');                
+document.writeln("</TR><TR>"); 
+column = 0;                
+for (a=0; a<startDay; a++)                
+{                
+document.writeln("\n<TD><FONT style=font-size:9pt></FONT></TD>");                
+column++;                
+}                
+
+for (i=1; i<=nDays; i++)
+{                
+if (i == thisDay)                
+{                
+document.writeln('</TD><td align="CENTER" bgcolor="#FF8040"><FONT style=font-size:9pt;Color:#ffffff><B>')                
+}                
+else                
+{                
+document.writeln('</TD><TD BGCOLOR="#E6E6FA" ALIGN="CENTER"><FONT style=font-size:9pt;font-family:Arial;font-weight:bold;Color:#330066>');                
+}                
+document.writeln(i);                
+if (i == thisDay) document.writeln("</FONT></TD>")                
+column++;                
+if (column == 7)                
+{                
+document.writeln("<TR>");                 
+column = 0;                
+}                
+}                
+document.writeln('<TR><td colspan="7" align="CENTER" valign="TOP" bgcolor="#EEE8AA"><form name="clock" onSubmit="0"><FONT style=font-size:9pt;Color:#000000>現在時間：</FONT><INPUT TYPE="Text" NAME="face" ALIGN="CENTER" ></TD></TR></TABLE></TD></TR></TABLE></FORM>');                
+}
+                
+var timerID = null;                
+var timerRunning = false;                
+function stopclock ()                
+{                
+if(timerRunning)                
+clearTimeout(timerID);                
+timerRunning = false;                
+}                
+function showtime()                
+{                
+var now = new Date()                
+var hours = now.getHours()                
+var minutes = now.getMinutes()                
+var seconds = now.getSeconds()                
+var timeValue = ""                
+if(hours>=1 && hours <4)                
+{timeValue += ("凌晨")}                
+if(hours>=4 && hours<6)                
+{timeValue += ("清晨")}                
+if(hours>=6 && hours<9)                
+{timeValue += ("早上")}                
+if(hours>=9 && hours<12)                
+{timeValue += ("上午")}                
+if(hours>=12 && hours<13)                
+{timeValue += ("中午")}                
+if(hours>=13 && hours<18)                
+{timeValue += ("下午")}                
+if(hours>=18 && hours <19)                
+{timeValue += ("傍晚")}                
+if(hours>=19 && hours <24)                
+{timeValue += ("晚上")}                
+if(hours<1)                
+{timeValue += ("午夜")}                
+timeValue  += ((hours > 12) ? hours - 12 : hours)                
+timeValue  += ((minutes < 10) ? ":0" : ":") + minutes                
+timeValue  += ((seconds < 10) ? ":0" : ":") + seconds                
+document.clock.face.value = timeValue                
+timerID = setTimeout("showtime()",1000)                
+timerRunning = true                
+}                
+function startclock ()                
+{                
+stopclock();                
+showtime();                
+}                
+<!--                
+calendar();
+                
+//-->                
+</SCRIPT>
+               
+<link rel="stylesheet" type="text/css" href="a001.css">
+</HEAD>
+<BODY LANG="zh-TW" leftmargin="0" bgcolor="#ffFF99" DIR="LTR" ONLOAD="startclock(); timerONE=window.setTimeout">
+</body>
+
+</html>

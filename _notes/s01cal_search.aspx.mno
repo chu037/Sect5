@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_DataSet1" value="name:m_messeng;datatype:202,name:m_date;datatype:7,name:today;datatype:7,name:m_num;datatype:3,name:m_time;datatype:7,name:m_hours;datatype:2,name:m_note;datatype:202,name:m_maker;datatype:202,name:m_date_en;datatype:7,name:m_time_en;datatype:7,name:m_detail;datatype:203,name:diff;datatype:3,name:diffen;datatype:3" />
+	<infoitem key="UD_DataSet2" value="name:m_messeng;datatype:202,name:m_date;datatype:7,name:today;datatype:7,name:m_num;datatype:3,name:m_time;datatype:7,name:m_hours;datatype:2,name:m_note;datatype:202,name:m_maker;datatype:202,name:m_date_en;datatype:7,name:m_time_en;datatype:7,name:m_detail;datatype:203,name:diff;datatype:3,name:diffen;datatype:3" />
+</info>
